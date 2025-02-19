@@ -6,7 +6,6 @@ import confetti from 'canvas-confetti'
 /**
  * Custom hook for managing the word game state and logic.
  */
-
 export const useWordGame = () => {
   const gameStatus = ref<GameStatus>(GameStatus.Playing)
   const isLoading = computed(() => definitions.value.length === 0)
@@ -58,6 +57,7 @@ export const useWordGame = () => {
   const wordApi = ref<string>(words[Math.floor(Math.random() * words.length)])
   const definitions = ref<string[]>([])
 
+  // Get a list of definitions from the API
   const fetchDefinitions = async () => {
     const response = await new dictionaryWordApi().get(wordApi.value)
     const meanings = response.data[0]?.meanings || []
@@ -70,13 +70,13 @@ export const useWordGame = () => {
 
   // GAME
 
-
   const wordDisplay = ref<string>('')
   const userGuess = ref<string>('')
   const feedback = ref<string | null>(null)
   const feedbackColor = ref<string>('red')
   const failCount = ref<number>(0)
 
+  // change the display for "_" depending on how long the word is
   const updateWordDisplay = () => {
     wordDisplay.value = '_ '.repeat(wordApi.value.length)
   }
