@@ -4,21 +4,6 @@ import { useWordGame } from '../modules/dictionary-test/camposables/useWordGame'
 import WordDescription from '@/components/WordDescription.vue'
 import { GameStatus } from '@/modules/dictionary-test/interfaces'
 
-/**
- * A custom hook that handles the game logic, including managing the state and functionality for word guessing.
- *
- * @returns {Object} The game state and methods.
- * @property {ComputedRef<boolean>} isLoading - Indicates whether the game is still loading.
- * @property {Ref<string>} wordApi - The word to be guessed.
- * @property {Ref<GameStatus>} gameStatus - The current game status (e.g., Playing, Won).
- * @property {Ref<string[]>} definitions - The list of definitions for the word.
- * @property {Ref<string>} userGuess - The user's current guess.
- * @property {Function} checkGuess - The function to check the user's guess.
- * @property {Ref<string | null>} feedback - Feedback message for the user.
- * @property {Ref<string>} feedbackColor - The color of the feedback message (green for correct, red for wrong).
- * @property {Ref<string>} wordDisplay - The display of the word with underscores for unguessed letters.
- * @property {Ref<number>} failCount - The number of failed attempts.
- */
 
 const {
   isLoading,

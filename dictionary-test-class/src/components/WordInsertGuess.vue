@@ -15,10 +15,10 @@ import { GameStatus } from '@/modules/dictionary-test/interfaces'
 
 /**
  * @typedef {Object} Props
- * @property {Function} checkGuess - Function to handle the user's guess verification.
- * @property {string | null} feedback - The feedback message to display to the user.
- * @property {string} feedbackColor - The color of the feedback message text.
- * @property {GameStatus} gameStatus - The current status of the game (Playing, Won, etc.).
+ * @property {Function} checkGuess
+ * @property {string | null} feedback
+ * @property {string} feedbackColor
+ * @property {GameStatus} gameStatus
  */
 
 /**
@@ -26,9 +26,21 @@ import { GameStatus } from '@/modules/dictionary-test/interfaces'
  * This component renders buttons and feedback based on the game status and user input.
  */
 interface Props {
+  /**
+   * Function to handle the user's guess verification.
+   */
   checkGuess: () => void
+  /**
+   * The feedback message to display to the user.
+   */
   feedback: string | null
+  /**
+   * The color of the feedback message text.
+   */
   feedbackColor: string
+  /**
+   * The current status of the game (Playing, Won, etc.).
+   */
   gameStatus: GameStatus
 }
 // Define the props to be passed into the component

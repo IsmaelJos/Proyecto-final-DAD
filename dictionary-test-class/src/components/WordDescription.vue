@@ -19,15 +19,21 @@
 <script setup lang="ts">
 /**
  * @typedef {Object} Props
- * @property {string[]} definitions - An array of word definitions.
- * @property {number} failCount - The number of failed guesses, which determines how many definitions to show.
+ * @property {string[]} definitions
+ * @property {number} failCount
  */
 /**
  * The props for the component that are passed from the parent.
  * This component renders the list of word definitions based on the fail count.
  */
 interface Props {
+  /**
+   *  An array of word definitions.
+   */
   definitions: string[]
+  /**
+   *  The number of failed guesses, which determines how many definitions to show.
+   */
   failCount: number
 }
 // Define the props to be passed into the component
